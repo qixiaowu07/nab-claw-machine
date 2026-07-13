@@ -3,8 +3,8 @@ window.AI_CONFIG = {
     apiKey: '',
     model: 'glm-4-flash',
     visionModel: 'glm-4v-flash',
-    defaultApiKey: '',
-    demoMode: true,
+    defaultApiKey: 'a63b3cbcf3144c36834a4246a433dd2e.FGsNsi6lxMKy71Xa',
+    demoMode: false,
 
     systemPrompt: `你是一个专业的抓娃娃策略专家，名叫"拿捏AI"。你的任务是根据用户提供的娃娃机文字描述，分析并给出精准的抓取策略建议。
 
@@ -70,5 +70,5 @@ if (savedKey && savedKey.trim() !== '') {
     window.AI_CONFIG.demoMode = false;
 } else {
     window.AI_CONFIG.apiKey = window.AI_CONFIG.defaultApiKey;
-    window.AI_CONFIG.demoMode = true;
+    window.AI_CONFIG.demoMode = false;
 }

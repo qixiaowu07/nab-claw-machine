@@ -296,7 +296,7 @@ ${description}
 
   resetApiKey() {
     window.AI_CONFIG.apiKey = window.AI_CONFIG.defaultApiKey;
-    window.AI_CONFIG.demoMode = true;
+    window.AI_CONFIG.demoMode = false;
     localStorage.removeItem('nab_ai_api_key');
   },
 
@@ -305,7 +305,8 @@ ${description}
   },
 
   hasCustomKey() {
-    return !window.AI_CONFIG.demoMode;
+    const savedKey = localStorage.getItem('nab_ai_api_key');
+    return !!(savedKey && savedKey.trim() !== '');
   },
 
   isDemoMode() {

@@ -1683,7 +1683,7 @@
   <div class="info-panel" id="infoPanel">
     <button class="info-panel-close" onclick="toggleInfoPanel(false)">✕</button>
     <h2>🎯 NAB 拿捏 Demo</h2>
-    <p>这是一个完整的交互式产品演示，内置智能演示模式（开箱即用），同时支持接入智谱AI GLM-4-Flash（永久免费）大模型。提供AI拍照抓诊和描述抓诊双模式，可标记正版娃娃并预估二级市场收益。</p>
+    <p>这是一个完整的交互式产品演示，已内置智谱AI GLM-4-Flash（永久免费）大模型，开箱即用真实AI分析，API调用失败时自动回退智能演示模式。提供AI拍照抓诊和描述抓诊双模式，可标记正版娃娃并预估二级市场收益。</p>
     <div class="feature-list">
       <div class="feature-item">✅ 5个完整Tab页面切换</div>
       <div class="feature-item">✅ AI智能抓诊：拍照抓诊+描述抓诊双模式</div>
@@ -1698,7 +1698,7 @@
       <div class="feature-item">✅ 开场splash动画+品牌吉祥物</div>
     </div>
     <div style="margin-top: 16px; padding: 12px; background: #F0FFF4; border-radius: 10px; font-size: 12px; color: #276749; line-height: 1.6;">
-      💡 <b>使用说明</b>：默认使用智能演示模式，可直接体验所有功能。如需真实AI大模型分析，请到「我的」→「AI设置」中配置智谱AI API Key（GLM-4-Flash永久免费）。
+      💡 <b>使用说明</b>：默认已接入真实AI大模型，可直接拍照或描述进行AI分析。如API额度用尽，可到「我的」→「AI设置」中配置您自己的智谱AI API Key（GLM-4-Flash永久免费）。
     </div>
   </div>
   <!-- 重新打开说明面板的悬浮按钮 -->
@@ -2685,12 +2685,12 @@
         </div>
         <div class="modal-text" style="margin-bottom: 16px; line-height: 1.7; font-size: 13px; text-align: left;">
           <div style="background: linear-gradient(135deg, rgba(78,205,196,0.1), rgba(255,159,67,0.1)); padding: 12px; border-radius: 12px; margin-bottom: 12px; border-left: 3px solid var(--accent);">
-            <b>💡 默认使用智能演示模式</b>，内置14种热门娃娃数据库，支持关键词智能匹配，开箱即用，无需配置。
+            <b>✅ 默认已接入智谱AI GLM-4-Flash</b>（永久免费大模型），开箱即用真实AI分析，无需配置。
           </div>
-          <div>如需体验真实AI大模型分析，可接入智谱AI（BigModel）的 <b>GLM-4-Flash</b> 模型（<b>永久免费</b>）。请前往 <a href="https://open.bigmodel.cn/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://open.bigmodel.cn/</a> 注册账号（免费注册），在「API密钥」页面创建密钥后填入下方即可。如API调用失败将自动回退到智能演示模式。</div>
+          <div>如您有自己的智谱AI API Key，可填入下方使用您自己的额度。点击「恢复默认」将恢复使用内置共享Key。如API调用失败将自动回退到智能演示模式。前往 <a href="https://open.bigmodel.cn/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://open.bigmodel.cn/</a> 可免费注册获取您自己的Key。</div>
         </div>
         <div style="margin-bottom: 12px;">
-          <input type="password" id="apiKeyInput" placeholder="填入您的智谱AI API Key（可选）" style="width: 100%; padding: 14px 16px; border: 2px solid rgba(255,107,157,0.2); border-radius: var(--radius-md); font-size: 14px; font-family: inherit; outline: none; box-sizing: border-box; background: var(--bg);" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='rgba(255,107,157,0.2)'">
+          <input type="password" id="apiKeyInput" placeholder="填入您自己的智谱AI API Key（可选）" style="width: 100%; padding: 14px 16px; border: 2px solid rgba(255,107,157,0.2); border-radius: var(--radius-md); font-size: 14px; font-family: inherit; outline: none; box-sizing: border-box; background: var(--bg);" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='rgba(255,107,157,0.2)'">
         </div>
         <div style="display: flex; gap: 10px; margin-bottom: 8px;">
           <button class="btn-secondary" style="flex: 1; padding: 12px; font-size: 14px;" onclick="resetApiKey()">🔄 恢复默认</button>
@@ -4186,10 +4186,10 @@
         if (window.AIService) {
           window.AIService.saveApiKey(key);
         }
-        showToast('智谱AI Key 保存成功！将使用真实AI分析。');
+        showToast('API Key 保存成功！将使用您自己的Key进行AI分析。');
         closeAISettings();
       } else {
-        showToast('请输入有效的API Key，或点击"恢复默认"使用演示模式');
+        showToast('请输入有效的API Key，或点击"恢复默认"使用内置共享Key');
       }
     }
 
@@ -4198,7 +4198,7 @@
         window.AIService.resetApiKey();
       }
       document.getElementById('apiKeyInput').value = '';
-      showToast('已恢复默认演示模式');
+      showToast('已恢复使用内置共享AI Key');
       closeAISettings();
     }
 
