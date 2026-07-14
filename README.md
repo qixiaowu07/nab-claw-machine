@@ -38,7 +38,7 @@
 
 访问部署好的在线版本即可直接使用：
 
-👉https://qixiaowu07.github.io/nab-claw-machine/（部署后替换为实际地址）
+👉https://qixiaowu07.github.io/nab-claw-machine/
 
 ### 本地运行
 
